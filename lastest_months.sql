@@ -5,13 +5,13 @@ select
   ,regexp_replace(substring_index(calendar_date,'-',2), '-', '/') as year_month
   ,regexp_replace(concat_ws('/',year(calendar_date),weekofyear(calendar_date)), '-', '/') as year_week
 from (
-select
-  explode(
-    sequence(to_date('2022-01-01'), 
-    to_date('2023-12-31'), 
-    interval 1 day) 
-  ) as calendar_date
-)
+  select
+    explode(
+      sequence(to_date('2022-01-01'), 
+      to_date('2023-12-31'), 
+      interval 1 day) 
+    ) as calendar_date
+  )
 )
 
 
@@ -27,7 +27,5 @@ where 1=1
 
 
 select distinct year_month `Month`, Name, Order from base
-
-
 
 

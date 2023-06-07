@@ -1,7 +1,7 @@
 # Parâmeters
 payment_type = 'Saldo' #'Parcelado', 'À Vista', 'Total'
 date_breakdown = '15 em 15 minutos' #30 em 30 minutos, #1 em 1 hora
-kpi = 'QTD' #QTD
+kpi = 'QTD' #TPV
 table_product = '<table_name>'
 
 

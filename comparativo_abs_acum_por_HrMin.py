@@ -62,12 +62,12 @@ select created_at
   	) end as payment_type
   ,payment_distribution
   ,(case 
-   		when '{payment_type}' = 'Saldo' then paid_balance_value
-   		when '{payment_type}' = 'Parcelado' then paid_credit_card_value
-   		when '{payment_type}' = 'À Vista' then paid_credit_card_value
-   		when '{payment_type}' = 'Total' then paid_total_value
+   		when '{payment_type}' = 'Saldo' then balance_value
+   		when '{payment_type}' = 'Parcelado' then credit_card_value
+   		when '{payment_type}' = 'À Vista' then credit_card_value
+   		when '{payment_type}' = 'Total' then total_value
    	end
-   	) as tpv  --paid_total_value_with_revenue
+   	) as tpv  
 from {table_product}
 where 1=1
 	and is_approved = true) t
